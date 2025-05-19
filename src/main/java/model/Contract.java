@@ -13,7 +13,7 @@ public class Contract {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
-    private LocalDate date = LocalDate.now();
+    private LocalDate date ;
     private int trajanjeUgovora;
     private BigDecimal plača;
 
@@ -27,6 +27,7 @@ public class Contract {
 
         this.plača = BigDecimal.valueOf(2022.22);
         this.trajanjeUgovora = 2;
+        this.date = LocalDate.now();
     }
 
     public Set<Company> getCompanies() {

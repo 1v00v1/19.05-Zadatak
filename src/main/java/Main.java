@@ -41,11 +41,11 @@ public class Main {
         for (Contract c : contracts){
             System.out.println("Osobe:");
             for (Person p : c.getPersons()){
-                System.out.println(p.getName());
+                System.out.println("\t"+p.getId()+" "+p.getName());
             }
             System.out.println("Kompanije:");
             for (Company com : c.getCompanies()){
-                System.out.println(com.getName());
+                System.out.println("\t"+com.getName());
             }
 
         }
