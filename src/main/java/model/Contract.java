@@ -12,7 +12,8 @@ public class Contract {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
-    private LocalDate date;
+
+    private LocalDate date = LocalDate.now();
     private int trajanjeUgovora;
     private BigDecimal plača;
 
@@ -21,4 +22,59 @@ public class Contract {
 
     @ManyToMany(mappedBy = "contracts")
     private Set<Person> persons = new HashSet<>();
+
+    public Contract() {
+
+        this.plača = BigDecimal.valueOf(2022.22);
+        this.trajanjeUgovora = 2;
+    }
+
+    public Set<Company> getCompanies() {
+        return companies;
+    }
+
+    public void setCompanies(Set<Company> companies) {
+        this.companies = companies;
+    }
+
+    public LocalDate getDate() {
+        return date;
+    }
+
+    public void setDate(LocalDate date) {
+        this.date = date;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+
+    public Set<Person> getPersons() {
+        return persons;
+    }
+
+    public void setPersons(Set<Person> persons) {
+        this.persons = persons;
+    }
+
+    public BigDecimal getPlača() {
+        return plača;
+    }
+
+    public void setPlača(BigDecimal plača) {
+        this.plača = plača;
+    }
+
+    public int getTrajanjeUgovora() {
+        return trajanjeUgovora;
+    }
+
+    public void setTrajanjeUgovora(int trajanjeUgovora) {
+        this.trajanjeUgovora = trajanjeUgovora;
+    }
 }
